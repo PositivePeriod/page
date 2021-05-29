@@ -1,0 +1,26 @@
+{
+    "name": "page",
+    "version": "1.0.0",
+    "description": "Personal page",
+    "main": "index.js",
+    "scripts": {
+        "develop": "node server.js",
+        "devloop": "nodemon --watch ./ server.js",
+        "test": "echo \"Just for test\" && exit 0"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/PositivePeriod/page.git"
+    },
+    "author": "Jeuk Hwang",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/PositivePeriod/page/issues"
+    },
+    "homepage": "https://github.com/PositivePeriod/page#readme",
+    "dependencies": {
+        "ejs": "^3.1.6",
+        "express": "^4.17.1",
+        "nodemon": "^2.0.7"
+    }
+}

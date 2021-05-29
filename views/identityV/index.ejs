@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('../template/head', {title:"Identity V Echoes Calculator"}); %>
+
+    <!--style-->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+    </style>
+    <link rel="stylesheet" type="text/css" href="./style.css">
+</head>
+
+<body>
+    <script type="text/javascript" src="process.js"></script>
+
+    <div class="body-content">
+        <div class="opposite container">
+            <div class="center">
+                Identity V Echoes calculator
+            </div>
+        </div>
+        <div id="proc" class="container">
+            <div class="flex-align">
+                <input type="number" id="input" autofocus placeholder='Write the amount of Echoes' onkeypress="if(event.keyCode == 13){process()}">
+                <button class="string" id="submit" onclick="process()">Calculate</button>
+            </div>
+        </div>
+        <div class="container">
+            <div id='result' class="center"></div>
+        </div>
+        <table id='table'>
+            <tr>
+                <th class="string">Echoes</th>
+                <th class="string">Cost</th>
+                <th class="string">Amount</th>
+            </tr>
+        </table>
+        <div class="container">
+            <div class="center">
+                © 2020-2021 Jeuk Hwang / Support : mn<br>
+                <a href='/contact'>Contact</a>
+            </div>
+        </div>
+        <div class="container">
+            <div class="center">
+                <select id="selecter" selected="English">
+                    <option value="English">English</option>
+                    <option value="Korean">Korean</option>
+                </select>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

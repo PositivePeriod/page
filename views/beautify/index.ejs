@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('../template/head', {title:"Text Beautify"}); %>
+
+    <link rel="stylesheet" type="text/css" href="./style.css">
+</head>
+
+<body>
+    <div class="center content">
+        <div class="center text">
+            <h1>Text Beautify</h1>
+            <div id="toast"></div>
+        </div>
+        <div class='flex'>
+            <div class='content'>
+                <h3 class="left text">Before</h3>
+                <button id='copy-input' data-clipboard-action="copy" data-clipboard-target="#input">Copy</button>
+                <button id='beautify' onclick="check()">Beautify</button>
+                <button id='clear' onclick="clear()">Clear</button>
+                <textarea id='input' autofocus></textarea>
+            </div>
+            <div class='content'>
+                <h3 class="left text">After</h3>
+                <button id='copy-output' data-clipboard-action="copy" data-clipboard-target="#output">Copy</button>
+                <button id='google' onclick="search('google')">Google</button>
+                <button id='papago' onclick="search('papago')">Papago</button>
+                <textarea id='output' readonly></textarea>
+            </div>
+        </div>
+        <div class="right text">
+            <h4>Text Beautify v1.3</h4>
+            <h4><a href="https://forms.gle/15rz5uMrCM3y2NLz6">Feedback</a></h4>
+            <h4>Contact : <a href="matilto:positiveperiod.dev@gmail.com">positiveperiod.dev@gmail.com</a></h4>
+            <h4>Jeuk Hwang 2020-2021</h4>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js"></script>
+    <script type="text/javascript" src="source.js"></script>
+
+</body>
+
+</html>
