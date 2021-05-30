@@ -16,18 +16,17 @@
 
     <div class="body-content">
         <div class="opposite container">
-            <div class="center">
-                Identity V Echoes calculator
-            </div>
+            <div class="center string">Identity V Echoes calculator</div>
         </div>
         <div id="proc" class="container">
-            <div class="flex-align">
-                <input type="number" id="input" autofocus placeholder='Write the amount of Echoes' onkeypress="if(event.keyCode == 13){process()}">
+            <div class="center">
+                <input type="number" id="input" autofocus placeholder='Write the amount of echoes you need' onkeypress="if(event.keyCode == 13){process()}">
                 <button class="string" id="submit" onclick="process()">Calculate</button>
             </div>
         </div>
         <div class="container">
-            <div id='result' class="center"></div>
+            <div id='result' class="center">
+            </div>
         </div>
         <table id='table'>
             <tr>
@@ -38,16 +37,12 @@
         </table>
         <div class="container">
             <div class="center">
-                © 2020-2021 Jeuk Hwang / Support : mn<br>
-                <a href='/contact'>Contact</a>
-            </div>
-        </div>
-        <div class="container">
-            <div class="center">
                 <select id="selecter" selected="English">
                     <option value="English">English</option>
                     <option value="Korean">Korean</option>
-                </select>
+                </select><br>
+                Echoes Calculator 2020-2021 / 
+                <a href='/contact'>Contact</a>
             </div>
         </div>
     </div>

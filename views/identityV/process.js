@@ -20,7 +20,7 @@ const l = menu_meari.length;
 
 const trans = {
     'English': {
-        'string': ['Identity V Echoes calculator', 'Write the amount of Echoes', 'Calculate', 'Echoes', 'Cost', 'Amount'],
+        'string': ['Identity V Echoes calculator', 'Write the amount of echoes you need', 'Calculate', 'Echoes', 'Cost', 'Amount'],
         'result': function(meari, n, cost) {
             return `Total ${meari} Echoes (+${meari-n}) for ${cost}USD`
         },
@@ -30,7 +30,7 @@ const trans = {
         'confirm': 'More than 999,999 Echoes can be slow'
     },
     'Korean': {
-        'string': ['제5인격 메아리 계산기', '메아리의 양을 입력하세요', '계산하기', '메아리', '가격', '수량'],
+        'string': ['제5인격 메아리 계산기', '필요하신 메아리의 양을 입력하세요', '계산하기', '메아리', '가격', '수량'],
         'result': function(meari, n, cost) {
             return `${cost}원에 총 ${meari} 메아리 (+${meari-n})`
         },

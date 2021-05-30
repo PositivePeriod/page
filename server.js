@@ -15,6 +15,14 @@ app.use(function(req, res, next) {
 // main page by static
 // app.use('/', express.static(path.join(__dirname, `/views/main`)));
 
+app.get('/develop/Text%20beautify', function(req, res, next) {
+    res.redirect('/beautify');
+});
+
+app.get('/game/IdentityV', function(req, res, next) {
+    res.redirect('/IdentityV');
+});
+
 // make index.ejs as the default for url ended with "/"
 app.all(/\/$/, function(req, res, next) {
     var filePath = path.join(__dirname, '/views' + req.url + 'index.ejs');
@@ -26,7 +34,10 @@ app.all(/\/$/, function(req, res, next) {
 
 app.use('/', express.static(path.join(__dirname, `/views`)));
 
-app.use((req, res, next) => { res.redirect('/404/'); });
+app.use((req, res, next) => {
+    console.log(req.url);
+    res.redirect('/404/');
+});
 
 const port = process.env.PORT || 3000;
 server = app.listen(port, function() {

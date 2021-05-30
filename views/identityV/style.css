@@ -89,10 +89,7 @@ input:focus {
 
 select,
 select:focus {
-    /* appearance: none; */
-    width: 20%;
-    border: none;
-    outline: none;
+    width: 15vw;
 }
 
 button {
