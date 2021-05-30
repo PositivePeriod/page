@@ -20,7 +20,7 @@ app.get('/develop/Text%20beautify', function(req, res, next) {
 });
 
 app.get('/game/IdentityV', function(req, res, next) {
-    res.redirect('/IdentityV');
+    res.redirect('/identityV');
 });
 
 // make index.ejs as the default for url ended with "/"

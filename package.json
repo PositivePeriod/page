@@ -2,7 +2,7 @@
     "name": "page",
     "version": "1.0.0",
     "description": "Personal page",
-    "main": "index.js",
+    "main": "server.js",
     "scripts": {
         "develop": "node server.js",
         "devloop": "nodemon --watch ./ server.js",
