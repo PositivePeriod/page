@@ -62,6 +62,13 @@ a {
     justify-content: space-evenly;
 }
 
+.flex-align2 {
+    display: flex;
+    align-items: center;
+    vertical-align: middle;
+    justify-content: space-evenly;
+}
+
 #survey {
     overflow: hidden;
     height: 500px;
