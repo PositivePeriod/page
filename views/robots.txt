@@ -1,2 +1,3 @@
 User-Agent: *
 Allow: /
+Sitemap: https://positiveperiod.herokuapp.com/sitemap.xml
