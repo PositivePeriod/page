@@ -45,7 +45,7 @@ function beautify(content) {
     const month_abbr = ['Jan', 'Feb', 'Mar', 'Apr', 'Aug', 'Sep', 'Sept', 'Oct', 'Nov', 'Dec'];
     const single_period_abbr = [...daily_single_abbr, ...case_insensitive_abbr, ...case_insensitive_abbr.map(x => x.toLowerCase()), ...time_unit_abbr, ...day_abbr, ...month_abbr];
     single_period_abbr.forEach(word => {
-        var regex = new RegExp(word + '\\.[ \\n]*', 'g');
+        var regex = new RegExp(`${word}\\.[ \\n]*`, 'g');
         content = content.replace(regex, `${word}. `);
     });
 
@@ -53,18 +53,23 @@ function beautify(content) {
     const location_abbr = ['i.e.', 'U.N.', 'U.S.A.', 'U.S.', 'L.A.', 'U.K.', 'N.Z.'];
     const multiple_period_abbr = [...daily_multiple_abbr, ...location_abbr];
     multiple_period_abbr.forEach(word => {
-        var regex = new RegExp(word + '[ \\n]*', 'g');
+        var regexWord = word.replaceAll('.', '\\.');
+        var regex = new RegExp(`${regexWord}[ \\n]*`, 'g');
         content = content.replace(regex, `${word} `);
     });
 
     // Ex) Fig.1.2, Mr.Steven, pp. 58 - 70
-    content = content.replace(/(\.[0-9]+\.)\n/g, (match, p1) => (p1));
+    const number_period_abbr = ['Fig', 'pp', 'Eq', 'Eqs', 'Vol', 'No'];
+    number_period_abbr.forEach(word => {
+        var regex = new RegExp(`${word}[ ]*\\.[ ]*[ 0-9]+(\\.[ 0-9]+)*`, 'g');
+        content = content.replace(regex, (match) => (match.replaceAll(' ', '')));
+    });
 
     // 3. little grammar error - except some cases like 1. or Mr.about dot
     // int
     // Ex) 1. one content, 2. another content
-    content = content.replace(/(\n[0-9]+\.)\n/g, (match, p1) => (p1));
-    content = content.replace(/( [0-9]+\.)\n/g, (match, p1) => (p1));
+    // content = content.replace(/(\n[0-9]+\.)\n/g, (match, p1) => (p1));
+    // content = content.replace(/( [0-9]+\.)\n/g, (match, p1) => (p1));
 
     // TODO - is it right in the logic
     // alphabet A ~ Z, a ~ z
