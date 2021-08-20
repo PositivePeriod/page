@@ -1,0 +1,157 @@
+* {
+    /*user-select: none;*/
+    outline: 0;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: normal;
+    color: #000000;
+    background-color: #ffffff;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+.text {
+    margin: 1em;
+}
+
+.center {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.left {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+}
+
+.right {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: right;
+}
+
+.left {
+    text-align: left;
+}
+
+.flex {
+    display: flex;
+    flex: auto;
+    justify-content: space-around;
+}
+
+.content {
+    text-align: center;
+    width: 80%;
+    height: auto;
+}
+
+textarea {
+    color: rgb(0, 0, 0);
+    width: calc(100% - 10px);
+    height: auto;
+    min-height: 200px;
+    resize: none;
+    border: 1px solid rgb(116, 116, 116);
+    border-radius: 10px;
+    padding: 10px;
+    background: rgb(255, 255, 255);
+    font-size: 1.2em;
+    overflow: hidden;
+}
+
+textarea::placeholder {
+    color: #757575;
+}
+
+#input {
+    background: rgb(255, 255, 255);
+}
+
+#output {
+    background: rgb(221, 221, 221);
+}
+
+button {
+    font-size: 18px;
+    color: #ffffff;
+    background: #3b3b3b;
+    border: solid transparent;
+    border-radius: 10px;
+
+    width: calc(100% - 10px);
+    margin-bottom: 5px;
+    padding: .8em 1.5em;
+    line-height: 18px;
+    white-space: nowrap;
+    display: inline;
+    position: relative;
+    transition: 0.25s;
+}
+
+button:hover {
+    color: #3b3b3b;
+    background: #ffffff;
+    border: solid #3b3b3b;
+}
+
+#clear {
+    background: #d13f3f;
+}
+
+#clear:hover {
+    color: #d13f3f;
+    background: #ffffff;
+    border: solid #d13f3f;
+}
+
+#papago {
+    background: #2cc86e;
+}
+
+#papago:hover {
+    color: #2cc86e;
+    background: #ffffff;
+    border: solid #2cc86e;
+}
+
+#google {
+    background: #4f8af1;
+}
+
+#google:hover {
+    color: #4f8af1;
+    background: #ffffff;
+    border: solid #4f8af1;
+}
+
+#toast {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    padding: 15px 20px;
+    transform: translate(-50%, 10px);
+    border-radius: 30px;
+    overflow: hidden;
+    font-size: 1rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .5s, visibility .5s, transform .5s;
+    background: rgba(0, 0, 0, 0.35);
+    color: #ffffff;
+    z-index: 10000;
+}
+
+#toast.reveal {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, 0)
+}
