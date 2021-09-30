@@ -1,5 +1,5 @@
 {
     "stage": "factorial",
     "data": "8320987112741390144276341183223364380754172606361245952449277696409600000000000000",
-    "sampleCode": "var data=1n;for(i=1;i<61;i++){data*=BigInt(i)};data=data.toString()"
+    "sampleCode": "data=1n;for(i=1;i<61;i++){data*=BigInt(i)};data+=''"
 }

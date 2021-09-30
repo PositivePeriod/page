@@ -1,4 +1,5 @@
 import { Stage } from './stage.js'
+import { executeCode } from './code.js';
 
 export class App {
     constructor() {
@@ -36,23 +37,35 @@ export class App {
     }
 
     async checkCode() {
+        var timeout = 5000
         var content = await this.stage.content();
-        var code = document.getElementById("code").value + ";return data";
-        try {
-            var result = new Function(code)();
-            if (content.data === result) {
-                var state = code.length < content.data.length ? 'Valid Efficient Code' : 'Valid Inefficient Code';
-                document.getElementById("state").innerText = `Code State: ${state}`;
-                document.getElementById("codeLen").innerText = `Code Length: ${code.length}`;
-            } else {
-                console.log("Invalide result:", result);
-                document.getElementById("state").innerText = `Code State: Invalid Code returning incorrect value`;
-            }
-        } catch (error) {
-            console.error("Error:", error);
-            document.getElementById("state").innerText = `Code State: Invalid Code having runtime error`;
-            document.getElementById("codeLen").innerText = `Code Length:`;
+        var code = document.getElementById("code").value;
+        var { msg, data } = await executeCode(code, timeout);
+        switch (msg) {
+            case "success":
+                if (content.data === data) {
+                    var state = code.length < content.data.length ? 'Valid efficient code' : 'Valid inefficient code';
+                } else {
+                    console.log("Invalid result:", data);
+                    var state = 'Invalid code returning incorrect value';
+                }
+                break;
+            case "nodata":
+                var state = 'Invalid code without return data';
+                break;
+            case "failure":
+                console.log("Error from code: ", data);
+                var state = 'Invalid code having runtime error';
+                break;
+            case "timeout":
+                var state = `Invalid code consuming more than ${timeout}ms`;
+                break;
+            default:
+                var state = `Unexpected error; please share your code with me`
+                break;
         }
+        document.getElementById("state").innerText = `Code State: ${state}`;
+        document.getElementById("codeLen").innerText = `Code Length: ${code.length}`;
     }
 
     async previousStage() {
