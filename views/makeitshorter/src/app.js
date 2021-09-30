@@ -37,6 +37,8 @@ export class App {
     }
 
     async checkCode() {
+        document.getElementById("state").innerText = `Code State:`;
+        document.getElementById("codeLen").innerText = `Code Length:`;
         var timeout = 5000
         var content = await this.stage.content();
         var code = document.getElementById("code").value;
