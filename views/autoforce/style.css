@@ -14,8 +14,8 @@ html,
 body {
     margin: 0;
     padding: 0;
-    overflow: hidden;
-    overscroll-behavior: none;
+    /* overflow: hidden; */
+    /* overscroll-behavior: none; */
 }
 
 a {
